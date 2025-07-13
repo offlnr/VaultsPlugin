@@ -1,10 +1,13 @@
-name: CajasPlugin
-version: '1.0 '
-main: me.offloner.backpack1.Backpack1
+name: VaultsPlugin
+version: '1.0'
+main: me.offloner.vaultsplugin.VaultsPlugin
 api-version: '1.21'
 authors: [ Offloner ]
-description: Para que lleves tu caja fuerte a todos lados!
+description: You can use a vault
 commands:
   caja:
     description: Permite utilizar una caja
+    usage: /<command>
+  vault:
+    description: You can use a vault
     usage: /<command>

@@ -1,5 +1,5 @@
-caja:
-  titulo: "Safe of §e§o{player}§r"
-  tamaño: 54
-  sonido: "BLOCK_ENDER_CHEST_OPEN"
-  mensaje_console: "You can't use this command from the console!"
+vault:
+  #Vault size must be a multiple of 9 between 9 and 54
+  title: "Safe of §e§o{player}§r"
+  size: 54
+  messageConsole: "You can't use this command from the console!"
