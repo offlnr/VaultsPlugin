@@ -39,28 +39,22 @@ public final class Backpack1 extends JavaPlugin implements Listener {
     }
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("caja")) {
+        if (command.getName().equalsIgnoreCase("caja") || command.getName().equalsIgnoreCase("vault")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
 
                 // Obtener configuración
-                String titulo = getConfig().getString("caja.titulo").replace("{player}", player.getName());
-                int tamaño = getConfig().getInt("caja.tamaño");
-                String sonidoNombre = getConfig().getString("caja.sonido");
+                String title = getConfig().getString("vault.title").replace("{player}", player.getName());
+                int size = getConfig().getInt("vault.size");
 
-                Inventory inv = Bukkit.createInventory(null, tamaño, titulo);
+                Inventory inv = Bukkit.createInventory(null, size, title);
                 inv.setContents(cargarInventario(player));
 
-                try {
-                    Sound sound = Sound.valueOf(sonidoNombre.toUpperCase());
-                    player.playSound(player.getLocation(), sound, 1.0f, 1.0f);
-                } catch (IllegalArgumentException e) {
-                    player.sendMessage("§c[Error] Invalid sound name in config.yml.");
-                }
+                player.playSound(player.getLocation(),Sound.BLOCK_ENDER_CHEST_OPEN,1.0f,1.0f);
 
                 player.openInventory(inv);
             } else {
-                String msg = getConfig().getString("caja.mensaje_console");
+                String msg = getConfig().getString("vault.messageConsole");
                 sender.sendMessage(msg);
             }
             return true;
