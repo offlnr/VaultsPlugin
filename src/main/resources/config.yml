@@ -1,0 +1,5 @@
+caja:
+  titulo: "Safe of §e§o{player}§r"
+  tamaño: 54
+  sonido: "BLOCK_ENDER_CHEST_OPEN"
+  mensaje_console: "You can't use this command from the console!"
